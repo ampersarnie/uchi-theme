@@ -1,0 +1,4 @@
+{
+    "extends": "@bigbite/build-tools/configs/tsconfig",
+    "include": ["src/**/*.ts"]
+}

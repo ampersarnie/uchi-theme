@@ -1,0 +1,31 @@
+{
+  "name": "uchi",
+  "version": "0.0.1",
+  "description": "Uchi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ri": "build-tools install",
+    "build": "build-tools build --once",
+    "watch": "build-tools build",
+    "prod": "build-tools build --once --production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ampersarnie/ampersandwich-wordpress-cms.git"
+  },
+  "author": "Paul Taylor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ampersarnie/ampersandwich-wordpress-cms/issues"
+  },
+  "homepage": "https://github.com/ampersarnie/ampersandwich-wordpress-cms#readme",
+  "prettier": "@bigbite/build-tools/configs/prettier",
+  "eslintConfig": {
+    "extends": "./node_modules/@bigbite/build-tools/configs/eslint"
+  },
+  "dependencies": {
+    "@bigbite/build-tools": "file:.yalc/@bigbite/build-tools",
+    "highlight.js": "^11.8.0"
+  }
+}

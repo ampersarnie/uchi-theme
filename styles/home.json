@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"title": "Charcoal",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "rgb(158,158,158)",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "rgb(43,44,44)",
+					"name": "Text",
+					"slug": "text"
+				},
+				{
+					"color": "rgb(43,44,44)",
+					"name": "Base Link",
+					"slug": "base-link"
+				},
+                {
+                    "color": "#000",
+                    "name": "Base Link Hover",
+                    "slug": "base-link-hover"
+                },
+				{
+					"color": "rgb(43,44,44,0.5)",
+					"name": "Border",
+					"slug": "border"
+				},
+				{
+					"color": "#756b83",
+					"name": "Primary",
+					"slug": "primary"
+				}
+			]
+		}
+	}
+}

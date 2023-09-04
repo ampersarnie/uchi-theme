@@ -1,0 +1,6 @@
+.yalc
+yalc.lock
+
+dist
+vendor
+node_modules
