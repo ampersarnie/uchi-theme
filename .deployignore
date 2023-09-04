@@ -1,8 +1,6 @@
 .yalc/
 yalc.lock
 
-.circleci/
-
 src/
 node_modules/
 
