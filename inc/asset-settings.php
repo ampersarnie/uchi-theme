@@ -8,8 +8,8 @@
  * It will be created and updated automatically whenever new assets are created.
  */
 
-define( 'SMPL_FRONTEND_CSS', 'frontend.css' );
-define( 'SMPL_FRONTEND_JS', 'frontend.js' );
+define( 'UCHI_FRONTEND_CSS', 'frontend-6dbe55b5.css' );
+define( 'UCHI_FRONTEND_JS', 'frontend-6003d4a9.js' );
 
-define( 'SMPL_FRONTEND_DEPENDENCIES', [] );
-define( 'SMPL_VERSION', '0.0.1' );
+define( 'UCHI_FRONTEND_DEPENDENCIES', [] );
+define( 'UCHI_VERSION', '0.0.1' );
