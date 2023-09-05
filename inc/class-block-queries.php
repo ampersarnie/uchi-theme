@@ -50,7 +50,10 @@ class BlockQueries
             return $response;
         }
 
-        if (!isset($error_data['details']['exclude']['code']) || $error_data['details']['exclude']['code'] !== 'rest_invalid_type') {
+        if (
+            !isset($error_data['details']['exclude']['code'])
+            || $error_data['details']['exclude']['code'] !== 'rest_invalid_type'
+        ) {
             return $response;
         }
 
@@ -75,7 +78,7 @@ class BlockQueries
         return $query;
     }
 
-    function emptyFeaturedImage($content, $block)
+    public function emptyFeaturedImage($content, $block)
     {
         if ($block['blockName'] !== 'core/post-featured-image') {
             return $content;
