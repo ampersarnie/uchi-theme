@@ -1,5 +1,6 @@
 .yalc
 yalc.lock
+inc/asset-settings.php
 
 dist
 vendor
