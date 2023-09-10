@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
-	"title": "Charcoal",
+	"title": "Home",
 	"settings": {
 		"color": {
 			"palette": [
@@ -31,9 +31,9 @@
 					"slug": "border"
 				},
 				{
-					"color": "#756b83",
-					"name": "Primary",
-					"slug": "primary"
+					"color": "#F8B800",
+					"name": "Primary Color Yellow",
+					"slug": "primary-yellow"
 				}
 			]
 		}
