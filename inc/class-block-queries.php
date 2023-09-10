@@ -4,8 +4,14 @@ namespace Ampersarnie\WP\Uchi;
 
 class BlockQueries
 {
+    /**
+     * Placeholder for the current post id when querying.
+     */
     public const CURRENT_POST_PARAM = 'currentPost';
 
+    /**
+     * Placeholder for the current post type when querying.
+     */
     public const CURRENT_TYPE_PARAM = 'currentPostType';
 
     /**
@@ -18,6 +24,12 @@ class BlockQueries
         add_filter('rest_request_before_callbacks', [$this, 'RESTOverrideExcludeParamSchemaError'], 10, 3);
     }
 
+    /**
+     * Get accepted params for overide and exclusion.
+     *
+     * @author Paul Taylor <paul.taylor@hey.com>
+     * @return array
+     */
     public function getParams(): array
     {
         $params = [
@@ -28,7 +40,17 @@ class BlockQueries
         return $params;
     }
 
-    public function RESTOverrideExcludeParamSchemaError($response, $handler, $request)
+    /**
+     * Override parameters that are part of the param
+     * list by ignoring the errors reported by the REST
+     * API when they apply to those params.
+     *
+     * @author Paul Taylor <paul.taylor@hey.com>
+     * @param  mixed $response Result to send to the client.
+     * @param  array $handler Route handler used for the request.
+     * @param  WP_REST_Request $request Request used to generate the response.
+     */
+    public function RESTOverrideExcludeParamSchemaError($response, array $handler, \WP_REST_Request $request)
     {
         $request_params = $request->get_param('exclude');
 
@@ -60,7 +82,15 @@ class BlockQueries
         return null;
     }
 
-    public function queryVars($query, $block)
+    /**
+     * Replace the query with the preset param as a placeholder.
+     *
+     * @author Paul Taylor <paul.taylor@hey.com>
+     * @param  array $query Array containing parameters for WP_Query as parsed by the block context.
+     * @param  WP_Block $block Block instance.
+     * @return array
+     */
+    public function queryVars(array $query, \WP_Block $block): array
     {
         $post_id = get_queried_object_id();
         $post_type = get_post_type($post_id);

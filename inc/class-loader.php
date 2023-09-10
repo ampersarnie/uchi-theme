@@ -15,7 +15,7 @@ class Loader
     public function __construct()
     {
         add_action('wp_enqueue_scripts', [ $this, 'enqueueAssets' ]);
-        add_filter('body_class', [$this, 'bodyClass']);
+        add_filter('body_class', [$this, 'bodyClassCategories']);
     }
 
     /**
@@ -49,7 +49,16 @@ class Loader
         );
     }
 
-    public function bodyClass(array $classes)
+    /**
+     * Add category slugs of the current post as
+     * css classes to the output body when viewing
+     * a single page.
+     *
+     * @author Paul Taylor <paul.taylor@hey.com>
+     * @param  array $classes An array of body class names.
+     * @return array
+     */
+    public function bodyClassCategories(array $classes): array
     {
         if (!is_single()) {
             return $classes;
