@@ -1,6 +1,6 @@
 {
   "name": "uchi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Uchi",
   "main": "index.js",
   "scripts": {
