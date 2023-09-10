@@ -27,6 +27,7 @@ class BlockQueries
     /**
      * Get accepted params for overide and exclusion.
      *
+     * @todo Change this to enumerations.
      * @author Paul Taylor <paul.taylor@hey.com>
      * @return array
      */
