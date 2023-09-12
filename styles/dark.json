@@ -1,39 +1,39 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 2,
-	"title": "Home",
+	"title": "Dark",
 	"settings": {
 		"color": {
 			"palette": [
 				{
-					"color": "rgb(158,158,158)",
+					"color": "rgb(43,44,44)",
 					"name": "Base",
 					"slug": "base"
 				},
 				{
-					"color": "rgb(43,44,44)",
+					"color": "rgb(203,203,203)",
 					"name": "Text",
 					"slug": "text"
 				},
 				{
-					"color": "rgb(43,44,44)",
+					"color": "rgb(203,203,203)",
 					"name": "Base Link",
 					"slug": "base-link"
 				},
                 {
-                    "color": "#000",
+                    "color": "#FFF",
                     "name": "Base Link Hover",
                     "slug": "base-link-hover"
                 },
 				{
-					"color": "rgb(43,44,44,0.5)",
+					"color": "rgba(203,203,203,0.5)",
 					"name": "Border",
 					"slug": "border"
 				},
 				{
-					"color": "#F8B800",
-					"name": "Primary Color Yellow",
-					"slug": "primary-yellow"
+					"color": "rgb(238, 93, 67)",
+					"name": "Primary Color",
+					"slug": "primary"
 				}
 			]
 		}
