@@ -1,3 +1,14 @@
+:root {
+  --code-color-meta: #08f;
+  --code-color-tag: #20af2c;
+  --code-color-var: #f38320;
+  --code-color-keyword: #eb4135;
+  --code-color-string: #36668e;
+  --code-color-params: #787d82;
+  --code-color-comment: #8b949e;
+  --code-color-func: #a668e8;
+}
+
 .wp-block-code {
   font-size: 1rem;
   background-color: var(--color-base-lightish);
@@ -10,7 +21,7 @@
 
 .wp-block-code .language-name {
   padding: 0.5rem 1rem;
-  background-color: var(--color-base-darkish);
+  background-color: var(--color-base-darker);
 
   &::before {
     content: '\2193';
@@ -19,18 +30,22 @@
   }
 }
 
+.wp-block-code .code-wrapper {
+  background-color: var(--color-base-darkish);
+}
+
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
 
-  color: #c9d1d9;
+  color: var(--code-color-params);
   background: #0d1117;
 }
 
 .hljs-comment,
 .hljs-punctuation {
-  color: #8b949e;
+  color: var(--code-color-comment);
 }
 
 .hljs-attr,
@@ -39,29 +54,29 @@
 .hljs-selector-attr,
 .hljs-selector-class,
 .hljs-selector-id {
-  color: #79c0ff;
+  color: var(--code-color-meta);
 }
 
 .hljs-variable,
 .hljs-literal,
 .hljs-number,
 .hljs-doctag {
-  color: #ffa657;
+  color: var(--code-color-var);
 }
 
 .hljs-params {
-  color: #c9d1d9;
+  color: var(--code-color-params);
 }
 
 .hljs-function {
-  color: #d2a8ff;
+  background-color: var(--color-base-func);
 }
 
 .hljs-class,
 .hljs-tag,
 .hljs-title,
 .hljs-built_in {
-  color: #7ee787;
+  color: var(--code-color-tag);
 }
 
 .hljs-keyword,
@@ -70,28 +85,28 @@
 .hljs-meta-keyword,
 .hljs-template-tag,
 .hljs-template-variable {
-  color: #ff7b72;
+  color: var(--code-color-keyword);
 }
 
 .hljs-string,
 .hljs-undefined {
-  color: #a5d6ff;
+  color: var(--code-color-string);
 }
 
 .hljs-regexp {
-  color: #a5d6ff;
+  color: var(--code-color-string);
 }
 
 .hljs-symbol {
-  color: #79c0ff;
+  color: var(--code-color-meta);
 }
 
 .hljs-bullet {
-  color: #ffa657;
+  color: var(--code-color-var);
 }
 
 .hljs-section {
-  color: #79c0ff;
+  color: var(--code-color-meta);
   font-weight: bold;
 }
 
@@ -99,16 +114,16 @@
 .hljs-name,
 .hljs-selector-tag,
 .hljs-selector-pseudo {
-  color: #7ee787;
+  color: var(--code-color-tag);
 }
 
 .hljs-emphasis {
-  color: #ffa657;
+  color: var(--code-color-var);
   font-style: italic;
 }
 
 .hljs-strong {
-  color: #ffa657;
+  color: var(--code-color-var);
   font-weight: bold;
 }
 
@@ -118,11 +133,11 @@
 }
 
 .hljs-addition {
-  color: #7ee787;
+  color: var(--code-color-tag);
   background-color: #04260f;
 }
 
 .hljs-link {
-  color: #a5d6ff;
+  color: var(--code-color-string);
   font-style: underline;
 }
