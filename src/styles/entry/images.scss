@@ -5,8 +5,10 @@
 .wp-block-post-content > figure {
   margin-inline-start: 0;
   margin-inline-end: 0;
+  border-bottom: 1px solid var(--color-border-darker-x);
 
-  &.size-large {
+  &.size-large,
+  &.size-full {
     margin-inline-end: -12.5rem;
   }
 }
@@ -15,12 +17,20 @@
   max-width: 1000px !important;
 }
 
+.wp-block-image figcaption {
+  font-size: smaller;
+  padding: 1rem 0;
+  margin: 0;
+  max-width: var(--wp--style--global--content-size);
+}
+
 @media (max-width: $view-mobile-max) {
   .wp-block-post-content > figure {
     margin-inline-start: 0;
     margin-inline-end: 0;
 
-    &.size-large {
+    &.size-large,
+    &.size-full {
       margin-inline-end: 0;
     }
   }
