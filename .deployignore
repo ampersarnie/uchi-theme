@@ -1,9 +1,0 @@
-.yalc/
-yalc.lock
-
-src/
-node_modules/
-
-composer.lock
-package-lock.json
-tsconfig.json
