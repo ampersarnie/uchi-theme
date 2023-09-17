@@ -1,7 +1,9 @@
-.yalc
+.yalc/
 yalc.lock
-inc/asset-settings.php
 
-dist
-vendor
-node_modules
+src/
+node_modules/
+
+composer.lock
+package-lock.json
+tsconfig.json
