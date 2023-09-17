@@ -22,3 +22,14 @@
     margin: 0;
   }
 }
+
+@media (max-width: $view-mobile-max) {
+  .wp-block-columns {
+    display: block;
+  }
+
+  .static-column {
+    width: 100%;
+    max-width: none;
+  }
+}

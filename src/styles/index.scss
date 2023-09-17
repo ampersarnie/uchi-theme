@@ -1,3 +1,5 @@
+$view-mobile-max: 800px;
+
 @import 'mixins/spacer';
 
 body {
@@ -19,6 +21,12 @@ body {
 
   padding: 0;
   padding-bottom: 2rem;
+}
+
+@media (max-width: $view-mobile-max) {
+  body .is-layout-flex {
+    display: block;
+  }
 }
 
 header {
@@ -46,11 +54,7 @@ em {
   margin-bottom: 1rem;
 }
 
-.title-wrapper {
-  align-items: flex-start !important;
-}
-
-@import 'entry/title';
+@import 'parts/titles';
 @import 'entry/content';
 @import 'entry/images';
 @import 'code-highlighting';
