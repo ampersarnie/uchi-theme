@@ -8,13 +8,9 @@
   }
 }
 
-em {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: larger;
-}
-
 .wp-block-columns {
   max-width: 1000px;
+  gap: 2rem;
 }
 
 .static-column {

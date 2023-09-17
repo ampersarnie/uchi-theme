@@ -25,6 +25,11 @@ header {
   background-color: var(--wp--preset--color--base);
 }
 
+em {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+}
+
 .spacer {
   @include spacer;
 }
