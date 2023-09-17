@@ -7,3 +7,22 @@
     font-weight: 300;
   }
 }
+
+em {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+}
+
+.wp-block-columns {
+  max-width: 1000px;
+}
+
+.static-column {
+  max-width: 400px;
+}
+
+.stretched-column {
+  figure {
+    margin: 0;
+  }
+}

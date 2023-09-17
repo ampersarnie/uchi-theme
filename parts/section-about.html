@@ -3,11 +3,25 @@
         <!-- wp:paragraph {"className":"large"} -->
             <p class="large-text"><strong>Bolded, and large</strong> intro text, <em>with emphesis</em></p>
         <!-- /wp:paragraph -->
-        <!-- wp:image -->
-            <figure class="wp-block-image"><img alt=""/></figure>
-        <!-- /wp:image -->
-        <!-- wp:paragraph -->
-            <p>Long-form intro text.</p>
-        <!-- /wp:paragraph -->
+        
+        <!-- wp:columns -->
+        <div class="wp-block-columns">
+            <!-- wp:column {"className": "static-column"} -->
+            <div class="wp-block-column static-column">
+                <!-- wp:paragraph -->
+                    <p>Long-form intro text.</p>
+                <!-- /wp:paragraph -->
+            </div>
+            <!-- /wp:column -->
+        
+            <!-- wp:column {"className": "stretched-column"} -->
+            <div class="wp-block-column stretched-column">
+                <!-- wp:image -->
+                    <figure class="wp-block-image"><img alt=""/></figure>
+                <!-- /wp:image -->
+            </div>
+            <!-- /wp:column -->
+        </div>
+        <!-- /wp:columns -->
     </div>
 <!-- /wp:group -->
