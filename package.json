@@ -12,20 +12,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ampersarnie/ampersandwich-wordpress-cms.git"
+    "url": "git+https://github.com/ampersarnie/uchi.git"
   },
   "author": "Paul Taylor",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ampersarnie/ampersandwich-wordpress-cms/issues"
+    "url": "https://github.com/ampersarnie/uchi/issues"
   },
-  "homepage": "https://github.com/ampersarnie/ampersandwich-wordpress-cms#readme",
+  "homepage": "https://github.com/ampersarnie/uchi#readme",
   "prettier": "@bigbite/build-tools/configs/prettier",
   "eslintConfig": {
     "extends": "./node_modules/@bigbite/build-tools/configs/eslint"
   },
   "dependencies": {
-    "@bigbite/build-tools": "^1.3.0-beta.4",
     "highlight.js": "^11.8.0"
+  },
+  "devDependencies": {
+    "@bigbite/build-tools": "^1.3.0"
   }
 }
