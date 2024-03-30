@@ -1,0 +1,7 @@
+parameters:
+  level: max
+  checkGenericClassInNonGenericObjectType: false
+  paths:
+    - inc/
+  bootstrapFiles:
+    - functions.php
