@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ampersarnie\WP\Uchi;
 
 /**
@@ -55,8 +57,8 @@ class Loader
      * a single page.
      *
      * @author Paul Taylor <paul.taylor@hey.com>
-     * @param  array $classes An array of body class names.
-     * @return array
+     * @param  string[] $classes An array of body class names.
+     * @return string[]
      */
     public function bodyClassCategories(array $classes): array
     {

@@ -2,6 +2,9 @@
 
 namespace Ampersarnie\WP\Uchi;
 
+use WP_REST_Request;
+use WP_Block;
+
 class BlockQueries
 {
     /**
@@ -29,7 +32,7 @@ class BlockQueries
      *
      * @todo Change this to enumerations.
      * @author Paul Taylor <paul.taylor@hey.com>
-     * @return array
+     * @return string[]
      */
     public function getParams(): array
     {
@@ -47,11 +50,13 @@ class BlockQueries
      * API when they apply to those params.
      *
      * @author Paul Taylor <paul.taylor@hey.com>
-     * @param  mixed $response Result to send to the client.
-     * @param  array $handler Route handler used for the request.
+     * @param  \WP_REST_Response|\WP_HTTP_Response|\WP_Error $response Result to send to the client.
+     * @param  array<string, mixed> $handler Route handler used for the request.
      * @param  WP_REST_Request $request Request used to generate the response.
+     *
+     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function RESTOverrideExcludeParamSchemaError($response, array $handler, \WP_REST_Request $request)
+    public function RESTOverrideExcludeParamSchemaError($response, array $handler, WP_REST_Request $request): mixed
     {
         $request_params = $request->get_param('exclude');
 
@@ -65,33 +70,53 @@ class BlockQueries
 
         $error_data = $response->get_error_data();
 
-        if (!isset($error_data['status']) || $error_data['status'] !== 400) {
-            return $response;
+        if (!is_array($error_data)) {
+            return null;
         }
 
-        if (!isset($error_data['details']['exclude'])) {
-            return $response;
-        }
-
-        if (
-            !isset($error_data['details']['exclude']['code'])
-            || $error_data['details']['exclude']['code'] !== 'rest_invalid_type'
-        ) {
+        if ($this->checkRESTErrorData($error_data)) {
             return $response;
         }
 
         return null;
     }
 
+     /**
+     * Check whether the error on the response.
+     *
+     * @author Paul Taylor <paul.taylor@hey.com>
+     * @param array<mixed|array<string>> $error_data Error data from a response.
+     * @return bool
+     **/
+    public function checkRESTErrorData(array $error_data): bool
+    {
+        if (
+            !isset($error_data['status'])
+            || $error_data['status'] !== 400
+            || !isset($error_data['details']['exclude'])
+        ) {
+            return true;
+        }
+
+        if (
+            !isset($error_data['details']['exclude']['code'])
+            || $error_data['details']['exclude']['code'] !== 'rest_invalid_type'
+        ) {
+            return true;
+        }
+
+        return false;
+    }
+
     /**
      * Replace the query with the preset param as a placeholder.
      *
      * @author Paul Taylor <paul.taylor@hey.com>
-     * @param  array $query Array containing parameters for WP_Query as parsed by the block context.
+     * @param  array<string, mixed> $query Array containing parameters for WP_Query as parsed by the block context.
      * @param  WP_Block $block Block instance.
-     * @return array
+     * @return array<string, mixed>
      */
-    public function queryVars(array $query, \WP_Block $block): array
+    public function queryVars(array $query, WP_Block $block): array
     {
         $post_id = get_queried_object_id();
         $post_type = get_post_type($post_id);
@@ -109,7 +134,16 @@ class BlockQueries
         return $query;
     }
 
-    public function emptyFeaturedImage($content, $block)
+    /**
+     * Create empty image wrapper if content not set.
+     *
+     * @author Paul Taylor <paul.taylor@hey.com>
+     *
+     * @param  string $content
+     * @param  array<string, string> $block
+     * @return string
+     */
+    public function emptyFeaturedImage(string $content, array $block): string
     {
         if ($block['blockName'] !== 'core/post-featured-image') {
             return $content;

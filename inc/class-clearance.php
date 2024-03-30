@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Ampersarnie\WP\Uchi;
 
 /**
@@ -29,7 +31,7 @@ class Clearance
     public function unhook(): void
     {
         /**
-         * Additional changes may be required in .htacess;
+         * Additional changes may be required in .htaccess;
          * # Block WordPress xmlrpc.php requests
          * <Files xmlrpc.php>
          * order deny,allow
@@ -67,8 +69,8 @@ class Clearance
      * Remove dns-prefetch for w.org emojis
      *
      * @author Paul Taylor <paul.taylor@hey.com>
-     * @param array $urls List of urls that will be added to prefetch.
-     * @return array
+     * @param string[] $urls List of urls that will be added to prefetch.
+     * @return string[]
      */
     public function removeDNSPrefetch(array $urls = []): array
     {
